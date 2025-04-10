@@ -1,3 +1,5 @@
+package maquinabebidas_2_2025;
+
 class MaquinaDeBebidas {
     private ContadorDeMonedas contador; // Contador de monedas de la maquina
     private DispensadorDeBotes cola, // Cinco dispensadores de botes
