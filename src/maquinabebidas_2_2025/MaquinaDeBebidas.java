@@ -50,7 +50,14 @@ class MaquinaDeBebidas {
     /* Entradas: Ninguna */
     /* Salidas: Ninguna */
     public void visualizarMaquina() {
-        System.out.println("\nMáquina de bebidas:");
+        System.out.println("\nMáquina de bebidas:" +
+                            "\nSaldo del cliente: " + contador.saldo() +
+                            "\nBotes:" +
+                            "\n-Cola: " + cola.botesDisponibles() +
+                            "\n-Limon: " + limon.botesDisponibles() +
+                            "\n-Naranja: " + naranja.botesDisponibles() +
+                            "\n-Tonica: " + tonica.botesDisponibles() +
+                            "\n-Agua: " + agua.botesDisponibles());
     }
 
     /*
@@ -81,12 +88,17 @@ class MaquinaDeBebidas {
     /* Entradas: char o, la orden del usuario */
     /* Salidas: Ninguna */
     private void ordenSeleccion(char o) {
+        try {
         (switch(o) {
             case 'A' -> cola;
             case 'B' -> limon;
             case 'C' -> naranja;
             case 'D' -> tonica;
             case 'E' -> agua;
+            default -> null;
         }).pulsarBoton();
+        } catch(Exception e) {
+            System.err.println("Se ha producido un error.");
+        }
     }
 }
